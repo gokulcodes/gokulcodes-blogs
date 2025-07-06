@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Host_Grotesk } from "next/font/google";
+import { Host_Grotesk, Unbounded } from "next/font/google";
 import "./globals.css";
 
 const hostGrotesk = Host_Grotesk({
   variable: "--font-host-grotesk",
+  subsets: ["latin"],
+});
+
+const unbounded = Unbounded({
+  variable: "--font-unbounded",
   subsets: ["latin"],
 });
 
@@ -19,7 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${hostGrotesk.variable} antialiased`}>{children}</body>
+      <body
+        className={`${hostGrotesk.variable} ${unbounded.variable} antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

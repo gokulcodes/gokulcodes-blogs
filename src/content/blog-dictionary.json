@@ -1,6 +1,6 @@
 [
   {
-    "id": "crp",
+    "id": "critical-rendering-path",
     "title": "Critical Rendering Path Explained",
     "description": "End to End walkthrough of how browsers render a web page from downloading data packets to rendering pixels on the screen",
     "date": "2025-07-06",
