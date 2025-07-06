@@ -63,7 +63,7 @@ export default function BlogPage() {
               {metadata?.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="bg-white/10 border border-white/20 px-2 py-1 rounded text-xs"
+                  className="dark:bg-white/10 bg-black/5 border-black/20 border dark:border-white/20 px-2 py-1 rounded text-xs"
                 >
                   {tag}
                 </span>

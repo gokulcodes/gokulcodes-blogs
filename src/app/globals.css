@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+  transition: all 0.2s ease-in-out;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #242424;

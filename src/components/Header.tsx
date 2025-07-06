@@ -3,12 +3,12 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="flex items-center py-4 pt-8 w-11/12 justify-between md:w-full border-b border-white/10 text-white">
+    <header className="flex items-center py-4 pt-8 w-11/12 justify-between md:w-full border-b border-black/10 dark:border-white/10 text-white">
       <Link href="/" className="flex items-center gap-2">
         <Image
           src="/logo.svg"
           alt="Gblogs logo"
-          className="h-10"
+          className="h-10 dark:invert-0 invert"
           width={100}
           height={100}
           priority
