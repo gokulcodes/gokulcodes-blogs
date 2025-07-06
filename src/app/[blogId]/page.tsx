@@ -49,7 +49,7 @@ export default function BlogPage() {
     <div className="flex flex-col items-center w-full h-full justify-start">
       <div className="flex flex-col max-w-4xl w-full items-center justify-start min-h-screen">
         <Header />
-        <div className="flex flex-col items-start w-11/12 md:w-full mt-4">
+        <div className="flex flex-col items-start w-11/12 md:w-full mt-10">
           <h1 className="font-title text-2xl font-medium">{metadata?.title}</h1>
           <p className="mt-2 opacity-80">{metadata?.description}</p>
           <div className="flex flex-col md:flex-row items-start gap-2 mt-4 w-full justify-between">
@@ -71,7 +71,7 @@ export default function BlogPage() {
             </div>
           </div>
         </div>
-        <div className="markdown w-11/12 md:w-full" ref={contentRef} />
+        <div className="markdown mt-8 w-11/12 md:w-full" ref={contentRef} />
       </div>
     </div>
   );
