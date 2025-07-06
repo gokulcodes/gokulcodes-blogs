@@ -1,0 +1,7 @@
+{
+  "title": "Critical Rendering Path",
+  "description": "Understanding how browsers render web pages",
+  "date": "2025-07-06",
+  "tags": ["DOM", "CRP", "CSSOM", "JavaScript", "Rendering"],
+  "content": "# Critical Rendering Path\n### How browser renders a web page\n- Browser download's HTML data packets from network\n- Downloaded data packets are tokenized\n- Tokenized html file is used to construct DOM Tree\n- Same Happens for CSS files. Here, CSSOM Tree is Created\n- Once both DOM and CSSOM tree's created, Render tree is created\n- Render Tree will contain only elements which are visible in the UI\n- After Render Tree, layout calculations are carried out to know which elements are to be painted on pixels in the viewport. This process is called as Reflow.\n- Once calculations are done, Layering and Compositing steps will kick in to paint the actual elements on the viewport. This process is called Repaint."
+}

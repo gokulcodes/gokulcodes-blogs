@@ -1,0 +1,10 @@
+[
+  {
+    "id": "crp",
+    "title": "Critical Rendering Path Explained",
+    "description": "End to End walkthrough of how browsers render a web page from downloading data packets to rendering pixels on the screen",
+    "date": "2025-07-06",
+    "tags": ["DOM", "CRP", "CSSOM", "JavaScript", "Rendering"],
+    "image": "/images/critical-rendering-path.jpg"
+  }
+]

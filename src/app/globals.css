@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #242424;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-host-grotesk);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #242424;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Host Grotesk", Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Base styles */
+.markdown {
+  font-family: "Host Grotesk", Roboto, "Helvetica Neue", sans-serif;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Headings */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.markdown h1 {
+  font-size: 2.25rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.3rem;
+}
+
+.markdown h2 {
+  font-size: 1.75rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.25rem;
+}
+
+.markdown h3 {
+  font-size: 1.5rem;
+}
+
+.markdown h4 {
+  font-size: 1.25rem;
+}
+
+.markdown h5 {
+  font-size: 1.125rem;
+}
+
+.markdown h6 {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Paragraphs */
+.markdown p {
+  margin: 1rem 0;
+}
+
+/* Blockquotes */
+.markdown blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid #cbd5e0;
+  color: #4a5568;
+  font-style: italic;
+  background: #f7fafc;
+}
+
+/* Code blocks */
+.markdown pre {
+  background: #f1f5f9;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  margin: 1.5rem 0;
+}
+
+.markdown pre code {
+  font-family: "Fira Code", "Courier New", monospace;
+  color: #2d3748;
+}
+
+/* Inline code */
+.markdown code {
+  background: #edf2f7;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.95em;
+  color: #d63384;
+}
+
+/* Lists */
+.markdown ul,
+.markdown ol {
+  margin: 1rem 0 1rem 1.5rem;
+  padding-left: 1rem;
+}
+
+.markdown ul {
+  list-style-type: disc;
+}
+
+.markdown ol {
+  list-style-type: decimal;
+}
+
+.markdown li {
+  margin-bottom: 0.5rem;
+}
+
+/* Tables */
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.markdown th,
+.markdown td {
+  border: 1px solid #cbd5e0;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.markdown th {
+  background-color: #f1f5f9;
+  font-weight: 600;
+}
+
+/* Horizontal rule */
+.markdown hr {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 2rem 0;
+}
+
+/* Images */
+.markdown img {
+  max-width: 100%;
+  display: block;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+}
+
+/* Links */
+.markdown a {
+  color: #3182ce;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.markdown a:hover {
+  color: #2c5282;
+}
