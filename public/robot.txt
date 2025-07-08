@@ -1,0 +1,6 @@
+# robots.txt for blogs.gokulcodes.dev
+
+User-agent: *
+Allow: /
+
+Sitemap: https://blogs.gokulcodes.dev/sitemap.xml
