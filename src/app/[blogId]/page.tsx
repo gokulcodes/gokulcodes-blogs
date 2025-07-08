@@ -29,9 +29,7 @@ export default function BlogPage() {
   const contentRef = useRef<HTMLDivElement>(null);
 
   async function fetchBlogContent(blogId: string) {
-    let baseURL =
-      "https://raw.githubusercontent.com/gokulcodes/gokulcodes-blogs/refs/heads/main/src/content/blogs/BLOG_ID.md";
-    baseURL = baseURL.replace("BLOG_ID", blogId);
+    const baseURL = `https://blogs.gokulcodes.dev/blogs/${blogId}.md`;
     const blogContent = await fetch(baseURL);
     const response = await blogContent.text();
     const parsedContent = markdown.parse(response);
