@@ -51,8 +51,10 @@ export default function BlogPage() {
       <div className="flex flex-col max-w-4xl w-full items-center justify-start min-h-screen">
         <Header />
         <div className="flex flex-col items-center w-11/12 md:w-full mt-10">
-          <h1 className="font-title text-2xl font-medium">{metadata?.title}</h1>
-          <p className="mt-2 text-center w-10/12 opacity-80">
+          <h1 className="font-title text-2xl text-center font-medium">
+            {metadata?.title}
+          </h1>
+          <p className="mt-2 text-center md:w-10/12 w-full opacity-80">
             {metadata?.description}
           </p>
           <Image
