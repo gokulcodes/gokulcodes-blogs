@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import blogs from "@/content/blog-dictionary.json";
 import { getFormatedTime } from "@/utils";
+import Image from "next/image";
 
 type BlogMetadata = {
   id: string;
@@ -49,10 +50,20 @@ export default function BlogPage() {
     <div className="flex flex-col items-center w-full h-full justify-start">
       <div className="flex flex-col max-w-4xl w-full items-center justify-start min-h-screen">
         <Header />
-        <div className="flex flex-col items-start w-11/12 md:w-full mt-10">
+        <div className="flex flex-col items-center w-11/12 md:w-full mt-10">
           <h1 className="font-title text-2xl font-medium">{metadata?.title}</h1>
-          <p className="mt-2 opacity-80">{metadata?.description}</p>
-          <div className="flex flex-col md:flex-row items-start gap-2 mt-4 w-full justify-between">
+          <p className="mt-2 text-center w-10/12 opacity-80">
+            {metadata?.description}
+          </p>
+          <Image
+            width={800}
+            height={400}
+            loading="lazy"
+            src={`/blog-assets/${metadata?.id}.png`}
+            alt={metadata?.title}
+            className="w-full rounded-2xl h-auto mt-6"
+          />
+          <div className="flex flex-col items-center gap-2 mt-4 w-full justify-between">
             <p>
               Date Published:{" "}
               {metadata?.date

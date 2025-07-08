@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Blog = {
   id: string;
   title: string;
@@ -13,12 +15,22 @@ export default function BlogCard(props: { blog: Blog }) {
   return (
     <a
       href={blogUrl}
-      className="border-b group hover:dark:border-white/40 hover:border-black/40 flex flex-col gap-2 pb-4 border-black/10 dark:border-white/10 w-full"
+      className="border-b group items-center justify-between hover:dark:border-white/40 hover:border-black/40 flex flex-col md:flex-row md:gap-10 pb-4 border-black/10 dark:border-white/10 w-full"
     >
-      <h2 className="text-xl font-bold">{props.blog.title}</h2>
-      <p className="text-black/60 group-hover:dark:text-white/80 group-hover:text-black/80 dark:text-white/60">
-        {props.blog.description}
-      </p>
+      <div className="flex flex-col gap-1">
+        <h2 className="text-xl font-bold">{props.blog.title}</h2>
+        <p className="text-black/60 group-hover:dark:text-white/80 group-hover:text-black/80 dark:text-white/60">
+          {props.blog.description}
+        </p>
+      </div>
+      <Image
+        src={`/blog-assets/${props.blog.id}.png`}
+        alt={props.blog.title}
+        width={1000}
+        loading="lazy"
+        height={1000}
+        className="md:w-48 w-full rounded-2xl h-auto mt-6"
+      />
     </a>
   );
 }
