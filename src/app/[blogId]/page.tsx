@@ -1,9 +1,7 @@
-"use client";
-
 import Header from "@/components/Header";
 import markdown from "@gokulvaradan/markdown-parser";
-import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+// import { usePathname } from "next/navigation";
+// import { useEffect, useRef, useState } from "react";
 import blogs from "@/content/blog-dictionary.json";
 import { getFormatedTime } from "@/utils";
 import Image from "next/image";
@@ -16,29 +14,37 @@ type BlogMetadata = {
   tags: string[];
 };
 
-export default function BlogPage() {
-  const pathname = usePathname();
-  const [metadata, setMetadata] = useState<BlogMetadata>();
-  const blogId = pathname.split("/").pop() as string;
+export default async function BlogPage({
+  params,
+}: {
+  params: { blogId: string };
+}) {
+  // const pathname = usePathname();
+  // const [metadata, setMetadata] = useState<BlogMetadata>();
+  // const blogId = pathname.split("/").pop() as string;
+  // const response = await params;
+  const blogId: string = params.blogId;
+  const metadata: BlogMetadata | undefined = blogs.find(
+    (blog) => blog.id === blogId
+  );
+  // setMetadata(blogMetadata);
+  // useEffect(() => {
+  // }, [blogId]);
 
-  useEffect(() => {
-    const blogMetadata = blogs.find((blog) => blog.id === blogId);
-    setMetadata(blogMetadata);
-  }, [blogId]);
-
-  const contentRef = useRef<HTMLDivElement>(null);
+  // const contentRef = useRef<HTMLDivElement>(null);
 
   async function fetchBlogContent(blogId: string) {
     const baseURL = `https://blogs.gokulcodes.dev/blogs/${blogId}.md`;
     const blogContent = await fetch(baseURL);
     const response = await blogContent.text();
     const parsedContent = markdown.parse(response);
-    contentRef.current!.innerHTML = parsedContent;
+    return parsedContent;
+    // contentRef.current!.innerHTML = parsedContent;
   }
 
-  useEffect(() => {
-    fetchBlogContent(blogId);
-  }, [blogId]);
+  const blogContent = await fetchBlogContent(blogId);
+  // useEffect(() => {
+  // }, [blogId]);
 
   if (!metadata) {
     return null;
@@ -82,7 +88,10 @@ export default function BlogPage() {
             </div>
           </div>
         </div>
-        <div className="markdown mt-8 w-11/12 md:w-full" ref={contentRef} />
+        <div
+          className="markdown mt-8 w-11/12 md:w-full"
+          dangerouslySetInnerHTML={{ __html: blogContent }}
+        ></div>
       </div>
     </div>
   );
