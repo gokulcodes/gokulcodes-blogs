@@ -69,7 +69,7 @@ export default async function BlogPage({
             alt={metadata?.title}
             className="w-full rounded-2xl h-auto mt-6"
           />
-          <div className="flex flex-col items-center gap-2 mt-4 w-full justify-between">
+          <div className="flex md:flex-row flex-col items-center gap-2 mt-4 w-full justify-between">
             <p>
               Date Published:{" "}
               {metadata?.date

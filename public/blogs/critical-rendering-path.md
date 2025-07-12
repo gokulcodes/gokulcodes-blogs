@@ -1,4 +1,4 @@
-# What is Critical Rendering Path
+# What is Critical Rendering Path?
 
 ### How browser renders a web page
 
