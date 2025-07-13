@@ -44,7 +44,7 @@ export default function Header() {
         <a
           target="_blank"
           className="opacity-80 hover:opacity-100"
-          href="https://www.linkedin.com/in/gokulvaradan/"
+          href="https://www.linkedin.com/in/gokulvaradan"
         >
           <Image
             src="/linkedin.png"
