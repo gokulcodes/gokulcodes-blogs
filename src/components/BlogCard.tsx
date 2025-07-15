@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { memo } from "react";
 
 type Blog = {
   id: string;
@@ -9,7 +10,7 @@ type Blog = {
   image: string;
 };
 
-export default function BlogCard(props: { blog: Blog }) {
+function BlogCard(props: { blog: Blog }) {
   const blogUrl = `/${props.blog.id}`;
 
   return (
@@ -34,3 +35,5 @@ export default function BlogCard(props: { blog: Blog }) {
     </a>
   );
 }
+
+export default memo(BlogCard);
