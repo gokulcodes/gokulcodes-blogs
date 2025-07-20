@@ -14,16 +14,18 @@ type BlogMetadata = {
   tags: string[];
 };
 
-export default async function BlogPage({
-  params,
-}: {
-  params: { blogId: string };
-}) {
+interface PageProps {
+  params: {
+    blogId: string;
+  };
+}
+
+export default async function BlogPage({ params }: PageProps) {
   // const pathname = usePathname();
   // const [metadata, setMetadata] = useState<BlogMetadata>();
   // const blogId = pathname.split("/").pop() as string;
-  // const response = await params;
-  const blogId: string = params.blogId;
+  const response = await params;
+  const blogId: string = response.blogId;
   const metadata: BlogMetadata | undefined = blogs.find(
     (blog) => blog.id === blogId
   );
