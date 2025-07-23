@@ -1,6 +1,6 @@
 # What is Critical Rendering Path?
 
-### How browser renders a web page
+### How browser renders a web page from data packets to pixels
 
 - Browser download's HTML data packets from network
 - Downloaded data packets are tokenized
