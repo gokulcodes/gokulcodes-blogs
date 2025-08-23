@@ -15,9 +15,9 @@ type BlogMetadata = {
 };
 
 interface PageProps {
-  params: {
+  params: Promise<{
     blogId: string;
-  };
+  }>;
 }
 
 export default async function BlogPage({ params }: PageProps) {
