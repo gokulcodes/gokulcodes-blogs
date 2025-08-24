@@ -21,9 +21,6 @@ interface PageProps {
 }
 
 export default async function BlogPage({ params }: PageProps) {
-  // const pathname = usePathname();
-  // const [metadata, setMetadata] = useState<BlogMetadata>();
-  // const blogId = pathname.split("/").pop() as string;
   const response = await params;
   const blogId: string = response.blogId;
   const metadata: BlogMetadata | undefined = blogs.find(
