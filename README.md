@@ -4,4 +4,4 @@ A collection of blogs by Gokul mostly focused web development, Algorithms, and A
 
 ## TODO
 
-Implement SSR for blog contents.
+Implement SSR for blog contents
