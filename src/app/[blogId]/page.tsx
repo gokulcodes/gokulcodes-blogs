@@ -95,7 +95,7 @@ export default async function BlogPage({ params }: PageProps) {
           href="https://blogs.gokulcodes.dev"
           className="p-8 group flex-col w-full mt-20 flex items-center justify-center border-t border-white/20"
         >
-          <p className="uppercase group-hover:opacity-100 opacity-60 text-xs font-bold tracking-widest">
+          <p className="uppercase font-title group-hover:opacity-100 opacity-60 text-[10px] font-medium group-hover:font-extrabold ">
             Blogs.gokulcodes.dev
           </p>
           <p className="text-[10px] opacity-40">All rights reserved</p>
