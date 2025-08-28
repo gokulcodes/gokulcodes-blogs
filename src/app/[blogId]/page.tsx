@@ -91,6 +91,15 @@ export default async function BlogPage({ params }: PageProps) {
           className="markdown mt-8 w-11/12 md:w-full"
           dangerouslySetInnerHTML={{ __html: blogContent }}
         ></div>
+        <a
+          href="https://blogs.gokulcodes.dev"
+          className="p-8 group flex-col w-full mt-20 flex items-center justify-center border-t border-white/20"
+        >
+          <p className="uppercase group-hover:opacity-100 opacity-60 text-xs font-bold tracking-widest">
+            Blogs.gokulcodes.dev
+          </p>
+          <p className="text-[10px] opacity-40">All rights reserved</p>
+        </a>
       </div>
     </div>
   );
