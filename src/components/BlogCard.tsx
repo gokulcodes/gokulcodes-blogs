@@ -13,7 +13,7 @@ type Blog = {
 function BlogCard(props: { blog: Blog }) {
   const blogUrl = `/${props.blog.id}`;
   const encodedImageURL = encodeURI(
-    `http://localhost:3000/api/images/${props.blog.title}`
+    `https://blogs.gokulcodes.dev/api/images/${props.blog.title}`
   );
   return (
     <a
