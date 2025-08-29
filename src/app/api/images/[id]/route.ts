@@ -5,7 +5,7 @@ import puppeteer from "puppeteer-core";
 // Handle GET requests to /api/users
 export async function GET(
   request: NextRequest,
-  params: Promise<{ id: string }>
+  params: Promise<{ params: { id: string } }>
 ) {
   let browser = null;
 
@@ -27,7 +27,7 @@ export async function GET(
     const awaitedParams = await params;
     page.$eval(
       "#main-title",
-      (el) => (el.innerHTML = decodeURI(awaitedParams.id))
+      (el) => (el.innerHTML = decodeURI(awaitedParams.params.id))
     );
 
     // Capture a screenshot
