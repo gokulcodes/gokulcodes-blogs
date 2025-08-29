@@ -1,9 +1,12 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import chromium from "@sparticuz/chromium";
 import puppeteer from "puppeteer-core";
 
 // Handle GET requests to /api/users
-export async function GET() {
+export async function GET(
+  request: NextRequest,
+  params: Promise<{ id: string }>
+) {
   let browser = null;
 
   try {
@@ -15,9 +18,17 @@ export async function GET() {
     });
 
     const page = await browser.newPage();
+    await page.setViewport({
+      width: 1920, // Viewport width in pixels
+      height: 1080, // Viewport height in pixels
+    });
     const url = "https://blogs.gokulcodes.dev/index.html";
     await page.goto(url, { waitUntil: "networkidle0" });
-    page.$eval("#main-title", (el) => (el.innerHTML = "Hello, world!"));
+    const awaitedParams = await params;
+    page.$eval(
+      "#main-title",
+      (el) => (el.innerHTML = decodeURI(awaitedParams.id))
+    );
 
     // Capture a screenshot
     const screenshot = await page.screenshot({ type: "png" });

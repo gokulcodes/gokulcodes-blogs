@@ -12,7 +12,9 @@ type Blog = {
 
 function BlogCard(props: { blog: Blog }) {
   const blogUrl = `/${props.blog.id}`;
-
+  const encodedImageURL = encodeURI(
+    `http://localhost:3000/api/images/${props.blog.title}`
+  );
   return (
     <a
       href={blogUrl}
@@ -25,7 +27,7 @@ function BlogCard(props: { blog: Blog }) {
         </p>
       </div>
       <Image
-        src={`/blog-assets/${props.blog.id}.png`}
+        src={encodedImageURL}
         alt={props.blog.title}
         width={1000}
         loading="lazy"
