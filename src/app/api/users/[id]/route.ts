@@ -15,8 +15,9 @@ export async function GET() {
     });
 
     const page = await browser.newPage();
-    const url = "https://gokulcodes.dev";
+    const url = "https://blogs.gokulcodes.dev/index.html";
     await page.goto(url, { waitUntil: "networkidle0" });
+    page.$eval("#main-title", (el) => (el.innerHTML = "Hello, world!"));
 
     // Capture a screenshot
     const screenshot = await page.screenshot({ type: "png" });
