@@ -11,6 +11,7 @@
   "dependencies": {
     "@gokulvaradan/markdown-parser": "^1.0.10",
     "next": "15.3.5",
+    "puppeteer": "^24.17.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
