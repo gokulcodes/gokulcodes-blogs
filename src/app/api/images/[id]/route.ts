@@ -25,10 +25,13 @@ export async function GET(
     const url = "https://blogs.gokulcodes.dev/index.html";
     await page.goto(url, { waitUntil: "networkidle0" });
     const awaitedParams = await params;
-    page.$eval(
-      "#main-title",
-      (el) => (el.innerHTML = decodeURI(awaitedParams.id))
-    );
+    console.log(awaitedParams);
+    page.evaluate((id) => {
+      const el = document.querySelector("#main-title");
+      if (el) {
+        el.innerHTML = decodeURI(id);
+      }
+    }, awaitedParams.id);
 
     // Capture a screenshot
     const screenshot = await page.screenshot({ type: "png" });
