@@ -14,6 +14,8 @@
   <style>
     * {
       font-family: "Unbounded", sans-serif;
+      margin: 0;
+      padding: 0;
     }
     body {
       background-image: url("background.png");
@@ -25,19 +27,30 @@
       align-items: center;
       justify-content: center;
       color: white;
-      text-transform: uppercase;
     }
     #main-title {
       height: 90vh;
       display: flex;
+      text-transform: uppercase;
       align-items: center;
       justify-content: center;
       font-size: 96px;
       text-align: center;
       width: 80vw;
     }
+    p {
+      font-weight: lighter;
+      font-size: 20px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      padding: 40px;
+      text-align: center;
+      background-image: linear-gradient(to top, black, transparent);
+    }
   </style>
   <body>
     <h1 id="main-title">Gokulcodes Blogs</h1>
+    <p>Published in blogs.gokulcodes.dev</p>
   </body>
 </html>

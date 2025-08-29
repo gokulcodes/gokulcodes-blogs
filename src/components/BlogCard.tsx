@@ -7,13 +7,13 @@ type Blog = {
   description: string;
   date: string;
   tags: string[];
-  image: string;
+  imageText: string;
 };
 
 function BlogCard(props: { blog: Blog }) {
   const blogUrl = `/${props.blog.id}`;
   const encodedImageURL = encodeURI(
-    `https://blogs.gokulcodes.dev/api/images/${props.blog.title}`
+    `https://blogs.gokulcodes.dev/api/images/${props.blog.imageText}`
   );
   return (
     <a
@@ -32,7 +32,7 @@ function BlogCard(props: { blog: Blog }) {
         width={1000}
         loading="lazy"
         height={1000}
-        className="md:w-48 w-full rounded-2xl h-auto mt-6"
+        className="md:w-48 bg-white/10 w-full rounded-2xl h-auto mt-6"
       />
     </a>
   );

@@ -12,6 +12,7 @@ type BlogMetadata = {
   description: string;
   date: string;
   tags: string[];
+  imageText: string;
 };
 
 interface PageProps {
@@ -26,6 +27,7 @@ export default async function BlogPage({ params }: PageProps) {
   const metadata: BlogMetadata | undefined = blogs.find(
     (blog) => blog.id === blogId
   );
+
   // setMetadata(blogMetadata);
   // useEffect(() => {
   // }, [blogId]);
@@ -49,6 +51,10 @@ export default async function BlogPage({ params }: PageProps) {
     return null;
   }
 
+  const encodedImageURL = encodeURI(
+    `https://blogs.gokulcodes.dev/api/images/${metadata.imageText}`
+  );
+
   return (
     <div className="flex flex-col items-center w-full h-full justify-start">
       <div className="flex flex-col max-w-4xl w-full items-center justify-start min-h-screen">
@@ -64,9 +70,9 @@ export default async function BlogPage({ params }: PageProps) {
             width={800}
             height={400}
             loading="lazy"
-            src={`/blog-assets/${metadata?.id}.png`}
+            src={encodedImageURL}
             alt={metadata?.title}
-            className="w-full rounded-2xl h-auto mt-6"
+            className="w-full bg-white/10 rounded-2xl h-auto mt-6"
           />
           <div className="flex md:flex-row flex-col items-center gap-2 mt-4 w-full justify-between">
             <p>

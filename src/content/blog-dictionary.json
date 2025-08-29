@@ -12,6 +12,6 @@
       "Rendering",
       "Browser Internals"
     ],
-    "image": "/images/critical-rendering-path.jpg"
+    "imageText": "How browser render’s a webpage"
   }
 ]
