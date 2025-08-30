@@ -13,5 +13,18 @@
       "Browser Internals"
     ],
     "imageText": "How browser render’s a webpage"
+  },
+  {
+    "id": "dynamic-image-generation-using-edge-functions",
+    "title": "Dynamic Image Generation using Edge Functions",
+    "description": "Explore how to leverage edge functions for on-the-fly image generation, optimizing performance and scalability.",
+    "date": "2025-09-15",
+    "tags": [
+      "Edge Functions",
+      "Image Generation",
+      "Performance",
+      "Scalability"
+    ],
+    "imageText": "Dynamic Image Generation using Edge Functions"
   }
 ]
