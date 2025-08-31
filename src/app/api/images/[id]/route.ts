@@ -33,17 +33,17 @@ export async function GET(
         mainTitleEl.innerHTML = decodeURI(id);
 
         // Calculate the background image index based on the first character of the id
-        const elementIndex = id.charCodeAt(0) % 7;
+        // const elementIndex = id.charCodeAt(0) % 7;
 
         // Set the background image of the body
-        document.body.style.backgroundImage = `url('backgrounds/background-${elementIndex}.jpg')`;
+        // document.body.style.backgroundImage = `url('backgrounds/background-${elementIndex}.jpg')`;
 
         // Log for debugging
-        console.log("Element Index: ", elementIndex);
-        console.log(
-          "Background Image Set To: ",
-          document.body.style.backgroundImage
-        );
+        // console.log("Element Index: ", elementIndex);
+        // console.log(
+        //   "Background Image Set To: ",
+        //   document.body.style.backgroundImage
+        // );
       } else {
         // Optional: Log a message if the element is not found
         console.warn("Element with ID 'main-title' not found.");
