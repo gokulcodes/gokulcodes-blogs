@@ -4,6 +4,7 @@
     "title": "How browser render’s a webpage",
     "description": "End to End walkthrough of how browsers render a web page from downloading data packets to rendering pixels on the screen. Technically this entire process is called, Critical Rendering Path (CRP).",
     "date": "2025-08-28",
+    "isPublished": true,
     "tags": [
       "DOM",
       "CRP",
@@ -18,6 +19,7 @@
     "id": "dynamic-image-generation-using-edge-functions",
     "title": "Dynamic Image Generation using Edge Functions",
     "description": "Explore how to leverage edge functions for on-the-fly image generation, optimizing performance and scalability.",
+    "isPublished": true,
     "date": "2025-09-15",
     "tags": [
       "Edge Functions",
