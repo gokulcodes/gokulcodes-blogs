@@ -26,15 +26,27 @@ export async function GET(
     await page.goto(url, { waitUntil: "networkidle0" });
     const awaitedParams = await params;
     page.evaluate((id) => {
-      const el = document.querySelector("#main-title");
-      if (el) {
-        el.innerHTML = decodeURI(id);
-        const body = document.body;
-        let elementIndex = id.charCodeAt(0);
-        elementIndex %= 7;
-        body.style.backgroundImage = `url('backgrounds/background-${elementIndex}.jpg')`;
+      const mainTitleEl = document.querySelector("#main-title");
+
+      if (mainTitleEl) {
+        // Set the inner HTML of the main title element
+        mainTitleEl.innerHTML = decodeURI(id);
+
+        // Calculate the background image index based on the first character of the id
+        const elementIndex = id.charCodeAt(0) % 7;
+
+        // Set the background image of the body
+        document.body.style.backgroundImage = `url('backgrounds/background-${elementIndex}.jpg')`;
+
+        // Log for debugging
         console.log("Element Index: ", elementIndex);
-        console.log("Background Image Set To: ", body.style.backgroundImage);
+        console.log(
+          "Background Image Set To: ",
+          document.body.style.backgroundImage
+        );
+      } else {
+        // Optional: Log a message if the element is not found
+        console.warn("Element with ID 'main-title' not found.");
       }
     }, awaitedParams.id);
 
