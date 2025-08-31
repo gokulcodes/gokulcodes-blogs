@@ -25,11 +25,14 @@ export async function GET(
     const url = "https://blogs.gokulcodes.dev/index.html";
     await page.goto(url, { waitUntil: "networkidle0" });
     const awaitedParams = await params;
-    console.log(awaitedParams);
     page.evaluate((id) => {
       const el = document.querySelector("#main-title");
       if (el) {
         el.innerHTML = decodeURI(id);
+        const body = document.body;
+        let elementIndex = awaitedParams.id?.charCodeAt(0) ?? 0;
+        elementIndex %= 7;
+        body.style.backgroundImage = `url('backgrounds/background-${elementIndex}.jpg')`;
       }
     }, awaitedParams.id);
 
