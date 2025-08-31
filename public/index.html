@@ -19,15 +19,15 @@
       padding: 0;
     }
     body {
-      background-image: url("backgrounds/background-6.png");
+      /* background-image: url("background.png"); */
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+      background-color: black;
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
-      background-color: black;
       justify-content: center;
       color: white;
     }
@@ -57,4 +57,9 @@
     <h1 id="main-title">Gokulcodes Blogs</h1>
     <p>Published in blogs.gokulcodes.dev</p>
   </body>
+  <script>
+    const body = document.body;
+    const randomIndex = Math.floor(Math.random() * 6);
+    body.style.backgroundImage = `url('backgrounds/background-${randomIndex}.jpg')`;
+  </script>
 </html>
