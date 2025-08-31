@@ -32,7 +32,7 @@ export async function GET(
         const body = document.body;
         let elementIndex = id.charCodeAt(0);
         elementIndex %= 7;
-        body.style.backgroundImage = `url('https://blogs.gokulcodes.dev/backgrounds/background-${elementIndex}.jpg')`;
+        body.style.backgroundImage = `url('backgrounds/background-${elementIndex}.jpg')`;
         console.log("Element Index: ", elementIndex);
         console.log("Background Image Set To: ", body.style.backgroundImage);
       }
