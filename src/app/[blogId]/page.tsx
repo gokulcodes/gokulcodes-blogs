@@ -120,7 +120,7 @@ export default async function BlogPage({ params }: PageProps) {
           ></div>
           <a
             href="https://blogs.gokulcodes.dev"
-            className="p-8 group flex-col w-full mt-20 flex items-center justify-center border-t border-white/20"
+            className="p-8 group flex-col w-full mt-20 flex items-center justify-center border-t dark:border-white/10 border-black/10"
           >
             <p className="uppercase font-title group-hover:opacity-100 opacity-60 text-sm font-medium group-hover:font-extrabold ">
               Blogs.gokulcodes.dev
