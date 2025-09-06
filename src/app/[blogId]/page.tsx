@@ -51,9 +51,10 @@ export default async function BlogPage({ params }: PageProps) {
     return null;
   }
 
-  const encodedImageURL = encodeURI(
-    `https://blogs.gokulcodes.dev/api/images/${metadata.imageText}`
+  let encodedImageURL = encodeURI(
+    `https://img.gokulcodes.dev/${metadata.imageText}.png`
   );
+  encodedImageURL = encodedImageURL.replaceAll("%", "");
 
   return (
     <>

@@ -13,8 +13,8 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "blogs.gokulcodes.dev",
-        pathname: "/api/images/**",
+        hostname: "img.gokulcodes.dev",
+        pathname: "/**",
       },
     ],
   },

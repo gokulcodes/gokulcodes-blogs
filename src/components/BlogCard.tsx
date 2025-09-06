@@ -12,9 +12,10 @@ type Blog = {
 
 function BlogCard(props: { blog: Blog }) {
   const blogUrl = `/${props.blog.id}`;
-  const encodedImageURL = encodeURI(
-    `https://blogs.gokulcodes.dev/api/images/${props.blog.imageText}`
+  let encodedImageURL = encodeURI(
+    `https://img.gokulcodes.dev/${props.blog.imageText}.png`
   );
+  encodedImageURL = encodedImageURL.replaceAll("%", "");
   return (
     <a
       href={blogUrl}
